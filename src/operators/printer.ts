@@ -44,6 +44,7 @@ export const printError = ({
   path,
   subError,
   unary,
+  diff,
 }: CompareError) => {
   const errorPath = subError ? subError.path : path;
   const at = errorPath
@@ -70,7 +71,8 @@ export const printError = ({
     ${prettyJson(actualValue, padd)}
   Expected:
     ${prettyJson(expectedValue, padd)}
-
+  Diff:
+    ${diff}
   ${fullActual
     ? `
   Full actual object:

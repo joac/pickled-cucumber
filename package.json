@@ -1,5 +1,5 @@
 {
-  "name": "pickled-cucumber",
+  "name": "el-pepino",
   "version": "2.1.2",
   "description": "Cucumber test runner with several condiments",
   "main": "index.js",
@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/muralco/pickled-cucumber",
   "devDependencies": {
+    "@types/json-diff": "0.5.1",
     "@types/lodash": "4.14.168",
     "@types/node": "^12.12.14",
     "@types/node-fetch": "^2.1.2",
@@ -28,6 +29,7 @@
   "dependencies": {
     "@cucumber/cucumber": "7.2.1",
     "import-cwd": "3.0.0",
+    "json-diff": "0.5.4",
     "node-fetch": "^2.2.0",
     "ts-node": "^7.0.0"
   },

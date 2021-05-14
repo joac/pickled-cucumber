@@ -1,5 +1,7 @@
 import { recursiveMatch } from '../../util';
 import { Operator } from '../types';
+import { diffString } from 'json-diff';
+
 
 const op: Operator = {
   arity: 'binary',
@@ -11,13 +13,15 @@ const op: Operator = {
       ? undefined
       : JSON.parse(expected);
     const errorPath = recursiveMatch(actual, expectedJson);
+    const diff = (diffString(actual, expectedJson, {color: false}));
     return errorPath === undefined
       ? undefined
       : {
         assertEquals: true,
-        error: 'is not',
+        error: `is not`,
         expected: expectedJson,
         path: errorPath,
+        diff,
       };
   },
   name: 'is',

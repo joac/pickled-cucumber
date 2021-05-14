@@ -8,6 +8,7 @@ interface OperatorError {
     path: string;
   };
   unary?: boolean;
+  diff?: string;
 }
 
 export interface CompareError extends OperatorError {
